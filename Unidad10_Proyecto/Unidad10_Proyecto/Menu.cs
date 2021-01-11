@@ -104,6 +104,49 @@ namespace Unidad10_Proyecto
 
                     break;
 
+                case "Ejercicio 4":
+
+                    double sumaElectrodomesticos = 0;
+                    double sumaTelevisiones = 0;
+                    double sumaLavadoras = 0;
+
+                    Electrodomestico [] arrayElectro = new Electrodomestico[10];
+
+                    arrayElectro[0] = new Electrodomestico(300, 23.4, 'F', "Rojo");
+                    arrayElectro[1] = new Lavadora(150, 30);
+                    arrayElectro[2] = new Televisor(500, 80, 'E', "negro", 42, false);
+                    arrayElectro[3] = new Electrodomestico();
+                    arrayElectro[4] = new Electrodomestico(600, 20, 'D', "gris");
+                    arrayElectro[5] = new Lavadora(230, 40, 'Z', "blanco", 40);
+                    arrayElectro[6] = new Televisor(150, 70);
+                    arrayElectro[7] = new Lavadora(200, 100, 'A', "verde", 15);
+                    arrayElectro[8] = new Televisor(110, 60, 'C', "naranja", 30, true);
+                    arrayElectro[9] = new Electrodomestico(30, 5);
+
+
+                    //Recorre la array con el objeto y identifica si es del mismo tipo para sumar
+                    for (int i = 0; i < arrayElectro.Length; i++)
+                    {
+
+                        if (arrayElectro[i].GetType() == typeof(Electrodomestico)){
+                        sumaElectrodomesticos += arrayElectro[i].precioFinal();
+                    }
+                    if (arrayElectro[i].GetType() == typeof(Lavadora))
+                        {
+                        sumaLavadoras += arrayElectro[i].precioFinal();
+                    }
+                    if (arrayElectro[i].GetType() == typeof(Televisor))
+                        {
+                        sumaTelevisiones += arrayElectro[i].precioFinal();
+                    }
+            }
+                    Console.WriteLine("Suma total Electrodomesticos: {0}",sumaElectrodomesticos);
+                    Console.WriteLine("Suma total Lavadoras: {0}", sumaLavadoras);
+                    Console.WriteLine("Suma total Televisores: {0}", sumaTelevisiones);
+
+
+                    break;
+
                 case "Salir":
 
                     break;
